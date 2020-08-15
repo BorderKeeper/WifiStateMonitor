@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using WiFiStateMonitor.Entities;
+using WiFiStateMonitor.Api.Services.Enums;
 
-namespace WiFiStateMonitor.Services
+namespace WiFiStateMonitor.Api.Services
 {
     public interface IGetWifiEventsService
     {

@@ -1,6 +1,6 @@
-﻿using WiFiStateMonitor.WifiObserver.Enums;
+﻿using WiFiStateMonitor.Api.WifiObserver.Enums;
 
-namespace WiFiStateMonitor.WifiObserver
+namespace WiFiStateMonitor.Api.WifiObserver.Entities
 {
     public class WifiStateChangedArguments
     {

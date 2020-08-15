@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WiFiStateMonitor.Entities
+namespace WiFiStateMonitor.Api.Services.Enums
 {
     public class WifiEvent
     {

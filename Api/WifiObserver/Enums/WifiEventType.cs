@@ -1,4 +1,4 @@
-﻿namespace WiFiStateMonitor.WifiObserver.Enums
+﻿namespace WiFiStateMonitor.Api.WifiObserver.Enums
 {
     public enum WifiEventType
     {

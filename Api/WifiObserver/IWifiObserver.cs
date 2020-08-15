@@ -1,6 +1,7 @@
 ﻿using System;
+using WiFiStateMonitor.Api.WifiObserver.Entities;
 
-namespace WiFiStateMonitor.WifiObserver
+namespace WiFiStateMonitor.Api.WifiObserver
 {
     public interface IWifiObserver : IDisposable
     {

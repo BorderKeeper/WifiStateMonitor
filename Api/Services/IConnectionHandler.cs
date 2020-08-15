@@ -1,8 +1,8 @@
 ﻿using System.Security;
 using System.Threading.Tasks;
-using WiFiStateMonitor.Services.Enums;
+using WiFiStateMonitor.Api.Services.Enums;
 
-namespace WiFiStateMonitor.Services
+namespace WiFiStateMonitor.Api.Services
 {
     public interface IConnectionHandler
     {

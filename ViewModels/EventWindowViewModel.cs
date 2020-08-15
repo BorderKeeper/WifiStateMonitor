@@ -5,8 +5,9 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using WiFiStateMonitor.Annotations;
+using WiFiStateMonitor.Api.Services;
+using WiFiStateMonitor.Api.Services.Enums;
 using WiFiStateMonitor.Commands;
-using WiFiStateMonitor.Entities;
 using WiFiStateMonitor.Services;
 
 namespace WiFiStateMonitor.ViewModels

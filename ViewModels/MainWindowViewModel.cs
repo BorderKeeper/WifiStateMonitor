@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using WiFiStateMonitor.Annotations;
+using WiFiStateMonitor.Api.Services;
 using WiFiStateMonitor.Services;
 using WiFiStateMonitor.Views;
 

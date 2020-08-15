@@ -1,4 +1,4 @@
-﻿namespace WiFiStateMonitor.Services.Enums
+﻿namespace WiFiStateMonitor.Api.Services.Enums
 {
     public enum LoginResult
     {

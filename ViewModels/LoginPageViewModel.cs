@@ -4,9 +4,9 @@ using System.Runtime.CompilerServices;
 using System.Security;
 using System.Windows.Input;
 using WiFiStateMonitor.Annotations;
+using WiFiStateMonitor.Api.Services;
+using WiFiStateMonitor.Api.Services.Enums;
 using WiFiStateMonitor.Commands;
-using WiFiStateMonitor.Services;
-using WiFiStateMonitor.Services.Enums;
 
 namespace WiFiStateMonitor.ViewModels
 {
