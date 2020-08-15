@@ -1,0 +1,45 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "WiFiStateMonitor/1.0.0": {
+        "dependencies": {
+          "FontAwesome5": "2.0.8"
+        },
+        "runtime": {
+          "WiFiStateMonitor.dll": {}
+        }
+      },
+      "FontAwesome5/2.0.8": {
+        "runtime": {
+          "lib/netcoreapp3.1/FontAwesome5.Net.dll": {
+            "assemblyVersion": "2.0.8.0",
+            "fileVersion": "2.0.8.0"
+          },
+          "lib/netcoreapp3.1/FontAwesome5.dll": {
+            "assemblyVersion": "2.0.8.0",
+            "fileVersion": "2.0.8.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WiFiStateMonitor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FontAwesome5/2.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2i08z4Dg9RbUyrkoDioB1ZQE326vCqGmgfIqTQ8dbpVRHbuF1iXRXS4vp/tSUF3h4wnGHJZS1KDcZsABbypZ6g==",
+      "path": "fontawesome5/2.0.8",
+      "hashPath": "fontawesome5.2.0.8.nupkg.sha512"
+    }
+  }
+}

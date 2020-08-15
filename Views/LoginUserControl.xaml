@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="WiFiStateMonitor.Views.LoginUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:fa5="http://schemas.fontawesome.com/icons/"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/CommonDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Row="0" Name="TopBar">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Column="0" Name="EmptyTopBarSection" Background="#828282"/>
+            <Grid Column="1" Name="ExitButton" Width="40" Height="40" HorizontalAlignment="Right">
+                <Button WindowChrome.IsHitTestVisibleInChrome="True" Command="{Binding ExitCommand}" BorderThickness="0">
+                    <fa5:FontAwesome Icon="Solid_Times" Foreground="Black"/>
+                </Button>
+            </Grid>
+        </Grid>
+
+        <TextBlock Grid.Row="1" Name="LogoText" Style="{DynamicResource TitleTextStyle}">Wi-Fi State Monitor</TextBlock>
+
+        <TextBox Grid.Row="2" Name="UsernameBox" Style="{DynamicResource UsernameInputStyle}" Text="{Binding Username, Mode=TwoWay}"/>
+
+        <PasswordBox Grid.Row="3" Name="PasswordBox" Style="{DynamicResource PasswordInputStyle}" PasswordChanged="PasswordBox_OnPasswordChanged"/>
+
+        <Grid Row="4" Name="ControlGrid" Style="{DynamicResource ControlGridStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Name="LoginResponseText" Text="{Binding LoginResponseText}" Style="{DynamicResource LoginResponseStyle}"/>
+            <Button Grid.Column="1" Name="LoginButton" Command="{Binding LoginCommand}" Style="{DynamicResource ButtonStyle}">Login</Button>
+        </Grid>
+    </Grid>
+</UserControl>

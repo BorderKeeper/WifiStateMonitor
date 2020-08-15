@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "KPzcCXtlmkfbSiQbMouNAozO569Z7V+ovzXb2M5WUAUb6KxUQ6JHBqmZYfzLBNjjjWY9mnQrglG/qRthzADHsw==",
+  "success": true,
+  "projectFilePath": "D:\\Repositories\\WiFiStateMonitor\\WiFiStateMonitor.csproj",
+  "expectedPackageFiles": [
+    "F:\\nuget\\fontawesome5\\2.0.8\\fontawesome5.2.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
