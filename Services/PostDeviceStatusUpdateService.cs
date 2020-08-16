@@ -26,7 +26,7 @@ namespace WiFiStateMonitor.Services
             var headers = SessionToHeaders(session);
             var message = new StatusUpdateMessage
             {
-                Country = statusUpdate.Country,
+                Country = statusUpdate.Country.ToString(),
                 Traffic = statusUpdate.Traffic,
                 Device = new Device
                 {
@@ -49,7 +49,7 @@ namespace WiFiStateMonitor.Services
             public Device Device { get; set; }
 
             [JsonPropertyName("countryIsoCode")]
-            public CountryIsoCode Country { get; set; }
+            public string Country { get; set; }
 
             [JsonPropertyName("traffic")]
             public decimal Traffic { get; set; }
