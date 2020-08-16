@@ -1,18 +1,30 @@
-﻿using WiFiStateMonitor.Api.Configuration;
+﻿using System.Configuration;
+using System.IO;
+using System.Xml.Serialization;
+using WiFiStateMonitor.Api.Configuration;
 using WiFiStateMonitor.Api.Configuration.Entities;
 
 namespace WiFiStateMonitor.Configuration
 {
     public class ConfigurationReader : IConfigurationReader
     {
+        private const string ConfigurationPath = ".env";
+
         public RestConfiguration GetRestConfiguration()
         {
-            return new RestConfiguration
+            if (!File.Exists(ConfigurationPath))
             {
-                //TODO: read from .env file
-                ApplicationId = "UKB9QAriw4ABOGRwOJ67fXj2Iypx7UQPhj5ZdR66",
-                RestApiKey = "FQ3wONUU2tFb7o8I7nszpAlQkMoxMS6FEbcpXkRz"
-            };
+                throw new ConfigurationErrorsException(".env file is missing");
+            }
+
+            XmlSerializer serializer = new XmlSerializer(typeof(RestConfiguration));
+
+            using (StreamReader reader = new StreamReader(ConfigurationPath))
+            {
+                var configuration = serializer.Deserialize(reader) as RestConfiguration;
+
+                return configuration;
+            }
         }
     }
 }

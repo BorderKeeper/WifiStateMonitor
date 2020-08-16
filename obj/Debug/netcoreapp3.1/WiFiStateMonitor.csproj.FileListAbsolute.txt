@@ -57,3 +57,4 @@ C:\Repositories\WifiStateMonitor\obj\Debug\netcoreapp3.1\WiFiStateMonitor.csproj
 C:\Repositories\WifiStateMonitor\obj\Debug\netcoreapp3.1\WiFiStateMonitor.dll
 C:\Repositories\WifiStateMonitor\obj\Debug\netcoreapp3.1\WiFiStateMonitor.pdb
 C:\Repositories\WifiStateMonitor\obj\Debug\netcoreapp3.1\WiFiStateMonitor.genruntimeconfig.cache
+C:\Repositories\WifiStateMonitor\bin\Debug\netcoreapp3.1\.env
