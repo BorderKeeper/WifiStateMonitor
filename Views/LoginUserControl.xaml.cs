@@ -15,7 +15,7 @@ namespace WiFiStateMonitor.Views
         {
             if (DataContext != null)
             {
-                (DataContext as LoginPageViewModel).Password = (sender as PasswordBox).SecurePassword;
+                (DataContext as LoginPageViewModel).Password = (sender as PasswordBox).Password;
             }
         }
     }

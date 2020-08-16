@@ -1,22 +1,29 @@
 ﻿using System;
+using WiFiStateMonitor.Api.Wifi.Enums;
 
 namespace WiFiStateMonitor.Api.Services.Enums
 {
     public class WifiEvent
     {
-        public string Info { get; set; }
+        public WifiEventType EventType { get; set; }
 
         public DateTime TimeStamp { get; set; }
 
-        public WifiEvent(string info)
+        public WifiEvent(WifiEventType eventType)
         {
-            Info = info;
+            EventType = eventType;
             TimeStamp = DateTime.Now;
+        }
+
+        public WifiEvent(WifiEventType eventType, DateTime timeStamp)
+        {
+            EventType = eventType;
+            TimeStamp = timeStamp;
         }
 
         public override string ToString()
         {
-            return $"{Info} | {TimeStamp.ToShortTimeString()}";
+            return $"{EventType} | {TimeStamp.ToShortTimeString()}";
         }
     }
 }

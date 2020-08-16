@@ -1,7 +1,8 @@
 ﻿namespace WiFiStateMonitor.Api.Services.Enums
 {
-    public enum LoginResult
+    public enum LoginStatus
     {
+        Unknown,
         Successful,
         IncorrectCredentials,
         Timeout

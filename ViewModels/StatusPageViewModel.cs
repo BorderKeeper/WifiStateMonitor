@@ -3,13 +3,23 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using WiFiStateMonitor.Annotations;
+using WiFiStateMonitor.Api.Services;
+using WiFiStateMonitor.Api.Services.Enums;
+using WiFiStateMonitor.Api.Wifi;
+using WiFiStateMonitor.Api.Wifi.Entities;
 using WiFiStateMonitor.Commands;
+using WiFiStateMonitor.Services;
 using WiFiStateMonitor.Views;
+using WiFiStateMonitor.Wifi;
 
 namespace WiFiStateMonitor.ViewModels
 {
     public class StatusPageViewModel : INotifyPropertyChanged
     {
+        private readonly IConnectionHandler _connectionHandler;
+        private readonly IPostWifiEventService _postWifiEventService;
+        private readonly IWifiObserver _wifiObserver;
+
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler LogoutEvent;
         public event EventHandler ExitEvent;
@@ -22,11 +32,26 @@ namespace WiFiStateMonitor.ViewModels
 
         private bool _eventWindowOpened = false;
 
-        public StatusPageViewModel()
+        public StatusPageViewModel(IConnectionHandler connectionHandler)
         {
+            _connectionHandler = connectionHandler;
+            _wifiObserver = new WifiObserver();
+            _postWifiEventService = new PostWifiEventService();
+
             ViewEventsCommand = new RelayCommand(OpenEventWindow);
             LogoutCommand = new EventRelayCommand(OnLogoutClicked);
             ExitCommand = new EventRelayCommand(OnExitClicked);
+
+            if (_connectionHandler.IsConnected())
+            {
+                _wifiObserver.WifiStateChanged += WifiStateChanged;
+                _wifiObserver.StartListening();
+            }
+        }
+
+        private void WifiStateChanged(object? sender, WifiStateChangedArguments e)
+        {
+            _ = _postWifiEventService.PostWifiEvent(_connectionHandler.GetSession(), new WifiEvent(e.EventType));
         }
 
         private void OpenEventWindow()
@@ -36,7 +61,7 @@ namespace WiFiStateMonitor.ViewModels
                 _eventWindowOpened = true;
 
                 var eventWindow = new EventWindow();
-                var eventWindowViewModel = new EventWindowViewModel();
+                var eventWindowViewModel = new EventWindowViewModel(_connectionHandler);
 
                 eventWindowViewModel.ExitButtonClicked += (sender, args) =>
                 {
@@ -51,6 +76,7 @@ namespace WiFiStateMonitor.ViewModels
 
         private void OnLogoutClicked(object sender, EventArgs arguments)
         {
+            _wifiObserver.StopListening();
             LogoutEvent?.Invoke(sender, arguments);
         }
 

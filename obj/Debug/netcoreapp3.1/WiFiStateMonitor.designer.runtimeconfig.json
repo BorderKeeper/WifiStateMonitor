@@ -6,9 +6,8 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\ledrj\\.dotnet\\store\\|arch|\\|tfm|",
-      "F:\\nuget",
-      "C:\\Microsoft\\Xamarin\\NuGet",
+      "C:\\Users\\jan.ledr.BAGIRASYS\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\jan.ledr.BAGIRASYS\\.nuget\\packages",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ],
     "configProperties": {

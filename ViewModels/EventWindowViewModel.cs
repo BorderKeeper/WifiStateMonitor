@@ -5,16 +5,18 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using WiFiStateMonitor.Annotations;
+using WiFiStateMonitor.Api.Rest.Enums;
 using WiFiStateMonitor.Api.Services;
 using WiFiStateMonitor.Api.Services.Enums;
 using WiFiStateMonitor.Commands;
 using WiFiStateMonitor.Services;
+using WiFiStateMonitor.ViewModels.Entities;
 
 namespace WiFiStateMonitor.ViewModels
 {
     public class EventWindowViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<WifiEvent> EventList { get; set; }
+        public ObservableCollection<WifiEventRow> EventList { get; set; }
 
         public ICommand CloseWindowCommand { get; set; }
 
@@ -22,29 +24,49 @@ namespace WiFiStateMonitor.ViewModels
         public event EventHandler ExitButtonClicked;
 
         private readonly IGetWifiEventsService _getWifiEventsService;
+        private readonly IConnectionHandler _connectionHandler;
 
-        public EventWindowViewModel()
+        public EventWindowViewModel(IConnectionHandler connectionHandler)
         {
+            _getWifiEventsService = new GetWifiEventsService();
+            _connectionHandler = connectionHandler;
+
+            EventList = new ObservableCollection<WifiEventRow>();
             CloseWindowCommand = new EventRelayCommand(OnExitButtonClicked);
+
+            LoadEvents();
         }
 
-        public void LoadEvents()
+        private void LoadEvents()
         {
             EventList.Clear();
-            EventList.Add(new WifiEvent("Loading Events..."));
+            EventList.Add(new WifiEventRow("Loading Events..."));
 
             _ = GetEventsAsync();
         }
 
         private async Task GetEventsAsync()
         {
-            var events = await _getWifiEventsService.GetEvents();
-
             EventList.Clear();
 
-            foreach (WifiEvent wifiEvent in events)
+            if (!_connectionHandler.IsConnected())
             {
-                EventList.Add(wifiEvent);
+                EventList.Add(new WifiEventRow("You are not logged in!"));
+                return;
+            }
+
+            var session = _connectionHandler.GetSession();
+            var events = await _getWifiEventsService.GetEvents(session, session.ObjectId);
+
+            if (events.ResponseStatus != RestResponseStatus.Ok)
+            {
+                EventList.Add(new WifiEventRow("Error connecting to the backend services!"));
+                return;
+            }
+
+            foreach (WifiEvent wifiEvent in events.WifiEvents)
+            {
+                EventList.Add(new WifiEventRow(wifiEvent.ToString()));
             }
         }
 

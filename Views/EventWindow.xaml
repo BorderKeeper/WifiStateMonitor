@@ -10,6 +10,7 @@
         ResizeMode="NoResize"
         Left="100"
         Top="100"
+        Foreground="Black"
         Title="Wi-Fi State Monitor" Height="400" Width="800">
     <WindowChrome.WindowChrome>
         <WindowChrome
@@ -75,7 +76,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ListViewItem>
-                        <TextBlock HorizontalAlignment="Left" Text="{Binding Info}"/>
+                        <TextBlock HorizontalAlignment="Left" Text="{Binding Text}"/>
                     </ListViewItem>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Repositories\WiFiStateMonitor\obj\Debug\netcoreapp3.1\
+C:\Repositories\WifiStateMonitor\obj\Debug\netcoreapp3.1\
 WiFiStateMonitor
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-D:\Repositories\WiFiStateMonitor\App.xaml
+C:\Repositories\WifiStateMonitor\App.xaml
 51823700328
 
-26-558701610
-194-39943828
+591662564668
+194-1445324008
 Styles\CommonDictionary.xaml;Views\EventWindow.xaml;Views\LoginUserControl.xaml;Views\MainWindow.xaml;Views\StatusUserControl.xaml;
 
-True
+False
 

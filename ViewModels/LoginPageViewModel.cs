@@ -21,7 +21,7 @@ namespace WiFiStateMonitor.ViewModels
         public string LoginResponseText { get; set; } = string.Empty;
 
         public string Username { get; set; }
-        public SecureString Password { get; set; }
+        public string Password { get; set; }
 
         public ICommand LoginCommand { get; set; }
         public ICommand ExitCommand { get; set; }
@@ -41,7 +41,7 @@ namespace WiFiStateMonitor.ViewModels
             {
                 switch (task.Result)
                 {
-                    case LoginResult.Successful:
+                    case LoginStatus.Successful:
                         OnLoginSuccessful();
                         return;
                 }

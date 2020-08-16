@@ -56,7 +56,7 @@ namespace WiFiStateMonitor.ViewModels
 
         private void DisplayStatusPage()
         {
-            var statusPageViewModel = new StatusPageViewModel();
+            var statusPageViewModel = new StatusPageViewModel(_connectionHandler);
             statusPageViewModel.LogoutEvent += Logout;
             statusPageViewModel.ExitEvent += ExitApplication;
 

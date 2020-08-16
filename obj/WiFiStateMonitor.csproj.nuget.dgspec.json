@@ -1,34 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Repositories\\WiFiStateMonitor\\WiFiStateMonitor.csproj": {}
+    "C:\\Repositories\\WifiStateMonitor\\WiFiStateMonitor.csproj": {}
   },
   "projects": {
-    "D:\\Repositories\\WiFiStateMonitor\\WiFiStateMonitor.csproj": {
+    "C:\\Repositories\\WifiStateMonitor\\WiFiStateMonitor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repositories\\WiFiStateMonitor\\WiFiStateMonitor.csproj",
+        "projectUniqueName": "C:\\Repositories\\WifiStateMonitor\\WiFiStateMonitor.csproj",
         "projectName": "WiFiStateMonitor",
-        "projectPath": "D:\\Repositories\\WiFiStateMonitor\\WiFiStateMonitor.csproj",
-        "packagesPath": "F:\\nuget",
-        "outputPath": "D:\\Repositories\\WiFiStateMonitor\\obj\\",
+        "projectPath": "C:\\Repositories\\WifiStateMonitor\\WiFiStateMonitor.csproj",
+        "packagesPath": "C:\\Users\\jan.ledr.BAGIRASYS\\.nuget\\packages\\",
+        "outputPath": "C:\\Repositories\\WifiStateMonitor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ledrj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jan.ledr.BAGIRASYS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "F:\\Work\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

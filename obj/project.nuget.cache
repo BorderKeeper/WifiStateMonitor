@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KPzcCXtlmkfbSiQbMouNAozO569Z7V+ovzXb2M5WUAUb6KxUQ6JHBqmZYfzLBNjjjWY9mnQrglG/qRthzADHsw==",
+  "dgSpecHash": "QuT0EvzN2ZMMgW4dDF76IHMHzoOaC0ZV3H3JL+SXne3iYohi78LCaMKFA8Rjchcv8ru/BCQzLb5Zn8SjKCjJhg==",
   "success": true,
-  "projectFilePath": "D:\\Repositories\\WiFiStateMonitor\\WiFiStateMonitor.csproj",
+  "projectFilePath": "C:\\Repositories\\WifiStateMonitor\\WiFiStateMonitor.csproj",
   "expectedPackageFiles": [
-    "F:\\nuget\\fontawesome5\\2.0.8\\fontawesome5.2.0.8.nupkg.sha512"
+    "C:\\Users\\jan.ledr.BAGIRASYS\\.nuget\\packages\\fontawesome5\\2.0.8\\fontawesome5.2.0.8.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,9 +1,9 @@
 ﻿using System;
-using WiFiStateMonitor.Api.WifiObserver.Entities;
+using WiFiStateMonitor.Api.Wifi.Entities;
 
-namespace WiFiStateMonitor.Api.WifiObserver
+namespace WiFiStateMonitor.Api.Wifi
 {
-    public interface IWifiObserver : IDisposable
+    public interface IWifiObserver
     {
         event EventHandler<WifiStateChangedArguments> WifiStateChanged;
 

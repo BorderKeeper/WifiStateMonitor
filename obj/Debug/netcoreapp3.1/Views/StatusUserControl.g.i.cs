@@ -110,7 +110,7 @@ namespace WiFiStateMonitor.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WiFiStateMonitor;component/views/statususercontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WiFiStateMonitor;V1.0.0.0;component/views/statususercontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\StatusUserControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
